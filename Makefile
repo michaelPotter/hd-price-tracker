@@ -1,7 +1,7 @@
-ARTIFACT=hd-price-tracker
-GITHUB_REPOSITORY=michaelpotter/hd-price-tracker
+CONTAINER=hd-price-tracker
+GITHUB_SCOPE=michaelpotter
 _VERSION=latest
-DOCKER_IMAGE=ghcr.io/$(GITHUB_REPOSITORY)/$(ARTIFACT):$(_VERSION)
+DOCKER_IMAGE=ghcr.io/$(GITHUB_SCOPE)/$(CONTAINER):$(_VERSION)
 
 dist: node_modules src/*
 	@npm run build
