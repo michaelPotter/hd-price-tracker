@@ -1,4 +1,7 @@
-DOCKER_IMAGE=hd-price-tracker:latest
+ARTIFACT=hd-price-tracker
+GITHUB_REPOSITORY=michaelpotter/hd-price-tracker
+_VERSION=latest
+DOCKER_IMAGE=ghcr.io/$(GITHUB_REPOSITORY)/$(ARTIFACT):$(_VERSION)
 
 dist: node_modules src/*
 	@npm run build
@@ -19,6 +22,9 @@ rundocker: Dockerfile dist
 		-it \
 		-p 3000:3000 \
 		$(DOCKER_IMAGE)
+
+pushdocker:
+	docker push $(DOCKER_IMAGE)
 
 clean:
 	@rm -rf node_modules dist
