@@ -1,7 +1,7 @@
-CONTAINER=hd-price-tracker
+IMAGE_NAME=hd-price-tracker
 GITHUB_SCOPE=michaelpotter
 _VERSION=latest
-DOCKER_IMAGE=ghcr.io/$(GITHUB_SCOPE)/$(CONTAINER):$(_VERSION)
+DOCKER_IMAGE=ghcr.io/$(GITHUB_SCOPE)/$(IMAGE_NAME):$(_VERSION)
 
 dist: node_modules src/*
 	@npm run build
